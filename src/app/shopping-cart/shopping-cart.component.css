@@ -1,0 +1,74 @@
+input {
+    max-width: 100%;
+    border: 1px solid rgb(185, 182, 182);
+    width: 73px;
+}
+
+img{
+    width: 53%;
+    margin-bottom: 18px;
+}
+.btn{
+    color:rgb(255, 255, 255);
+    background-color: #F48999;
+    font-family: monospace;
+}
+.col-2{
+    font-family: monospace;
+}
+.onerow{
+    text-align: -webkit-center;
+    font-size: 22px;
+    color: grey;
+    text-align: -webkit-center;
+    padding: 13px;
+}
+.tworow{
+    align-items: center;
+    margin-top: 23px;
+    padding: 13px;
+    background-color: rgb(247, 244, 244);
+    cursor: pointer;
+}
+.tworow:hover{
+    background-color:rgb(224, 221, 221); 
+}
+.row{
+    font-family: monospace;
+}
+.bi {
+    font-size: 60px;
+    color:rgb(161, 159, 159)
+}
+.nacin{
+    margin-left: 68px;
+    color:rgb(97, 94, 94);
+    
+}
+.adress{
+    padding: 68px;
+    padding-left: 68px;
+    padding-right: 68px;
+    padding-bottom: 35px;
+}
+.cart{
+    padding-left: 64px;
+}
+p{
+color: rgb(161, 154, 154);
+}
+
+.tdd{
+    padding-left: 25px;
+    padding-top: 8px;
+}
+.payment:hover{
+    background-color:rgb(243, 238, 238); 
+}
+.btnfin{
+    margin-bottom: 33px;
+    margin-top: 9px;
+}
+#one{
+    color: #F48999;
+}

@@ -1,0 +1,21 @@
+<div class="row justify-content-center" style="align-items: center; padding: 12px;">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <marquee direction="left" style="font-family:monospace, sans-serif; color: #0a0909"  scrolldelay="100" behavior="loop">{{tag}}</marquee>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <span style="margin-right: 15px">
+            <a (click)="goTo('/main/favorite-product')"><mat-icon matTooltip="Омилено" matBadge={{favCount}} matBadgeColor="accent">favorite_border</mat-icon></a>
+        </span>
+        <span>
+            <a (click)="goTo('/main/shopping-cart')"> <mat-icon matTooltip="Корпа" matBadge={{shopCount}} matBadgeColor="accent">shopping_cart</mat-icon></a>
+        </span>
+    </div>
+</div>
+
+<div class="row justify-content-center header p-0" >
+    <div class="col-md-6 logo" (click)="home()" >
+        <h5>Јewelry Store  <img src="http://easyreservers.com:8080/shop-images/logo.png" style="width:5%;  transform: rotate(45deg);"></h5>
+   </div>
+</div>

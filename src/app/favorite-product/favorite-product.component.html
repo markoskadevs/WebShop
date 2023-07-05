@@ -1,0 +1,35 @@
+<div class="row" style="padding: 68px;">
+    <div class="col-md-2">
+        <h3 style="color:#F48999;;">ОМИЛЕНИ ПРОИЗВОДИ</h3>
+    </div>
+    <div class="col-md-10">
+        <hr />
+    </div>
+</div>
+
+<div class="row onerow"*ngIf="showProducts">
+    <div class="col-md-3">Слика</div>
+    <div class="col-md-3">Производ</div>
+    <div class="col-md-3">Цена</div>
+    <div class="col-md-3"></div>
+</div>
+
+<div class="row onerow" *ngIf="!showProducts">
+    <div class="col-md-12 mb-5">Во вашата листа на омилени производи нема додадено продукти</div>
+</div>
+
+<div class="row justify-content-center tworow mb-3"*ngFor="let item of favoriteList">
+    <div class="col-md-3 text-center" (click)="goToDetails(item.id)"><img src="{{item.img}}"> </div>
+    <div class="col-md-3 text-center" (click)="goToDetails(item.id)"> 
+        <h4>{{item.productsInfos[0].name}}</h4>
+    </div>
+    <div class="col-md-3 text-center" (click)="goToDetails(item.id)">
+        <h4>{{item.price}} MKD</h4>
+    </div>
+    <div class="col-md-3 text-center">
+        <button class="btn btn-sm" id="delete" type="button"><mat-icon matTooltip="Избриши" (click)="deleteProduct(item.id)">delete_forever</mat-icon></button>
+        <button class="btn btn-sm" type="button"> <mat-icon matTooltip="Додади во корпа" matTooltip="Додади во кошничка" (click)="addToCart(item)">shopping_cart</mat-icon></button>
+    </div>
+</div>
+
+

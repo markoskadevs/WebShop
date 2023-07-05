@@ -1,0 +1,190 @@
+<div class="row" style="padding: 68px;">
+    <div class="col-md-2">
+        <h2>ВАША КОРПА</h2>
+    </div>
+    <div class="col-md-10">
+        <hr />
+    </div>
+</div>
+
+<div class="row onerow" *ngIf="showProducts">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">Производ</div>
+    <div class="col-md-2">Цена</div>
+    <div class="col-md-2">Количина</div>
+    <div class="col-md-2">Вкупно</div>
+    <div class="col-md-2"></div>
+</div>
+
+<div class="row onerow" *ngIf="!showProducts">
+    <div class="col-md-12 mb-5">Во вашата кошничка нема додадено продукти</div>
+</div>
+
+
+<div class="row justify-content-center tworow"*ngFor="let item of cartList" (click)="goToDetails(item.id)">
+
+    <div class="col-md-2 text-center"><img src="{{item.img}}"> </div>
+    <div class="col-md-2 text-center"> 
+        <h4>{{item.name}}</h4>
+        <p style="color:grey;">Шифра на артикал:{{item.code}}</p>
+    </div>
+    <div class="col-md-2 text-center">
+        <h4>{{item.price}} MKD</h4>
+    </div>
+    <div class="col-md-2 text-center">
+        <h4>{{item.quantity}}</h4>
+    </div>
+    <div class="col-md-2 text-center" style="color: red;">
+        <h4>{{item.price * item.quantity}} MKD</h4>
+    </div>
+    <div class="col-md-2 text-center">
+        <button class="btn btn-sm" type="button"(click)="deleteProductFromCart(item.id)">Избришете</button>
+    </div>
+</div>
+
+<div class="row" style="padding: 68px;padding-bottom: 40px;" *ngIf="showProducts">
+    <div class="col-md-3" style="font-family: monospace;">
+        <h3>АДРЕСА НА ИСПОРАКА</h3>
+    </div>
+    <div class="col-md-6">
+        <hr />
+    </div>
+    <div class="col-md-3" style="font-family: monospace;">
+        <h3>ИСПОРАКА И ПЛАЌАЊЕ</h3>
+    </div>
+    <div class="col-md-6 mt-5" style="margin-bottom: 40px;text-align: -webkit-center;color:#F48999;font-family: monospace;padding-left: 11px;">
+        <h5>Доколку сакате да порачате, ве молиме пополнете ги задолжителните полиња</h5>
+    </div>
+    <div class="col-md-6 mt-5" style="margin-bottom: 40px;text-align: -webkit-center;color:#F48999;font-family: monospace;padding-left: 11px;">
+        <h5 id="one">Изберете еден од начините на плаќање</h5>
+    </div>
+
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="w-75">
+                    <mat-label>Име:</mat-label>
+                    <input matInput [(ngModel)]="name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6" >
+                <mat-form-field class="w-75">
+                    <mat-label>Презиме:</mat-label>
+                    <input matInput [(ngModel)]="lastname">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="w-75">
+                    <mat-label>Е-маил:</mat-label>
+                    <input matInput [(ngModel)]="email">
+                </mat-form-field>
+            </div>
+             <div class="col-md-6" >
+                <mat-form-field class="w-75">
+                    <mat-label>Телефон:</mat-label>
+                    <input matInput [(ngModel)]="phone">
+                 </mat-form-field>    
+            </div>
+            <div class="col-md-6" >
+                <mat-form-field class="w-75">
+                    <mat-label>Град:</mat-label>
+                    <input  matInput [(ngModel)]="city">
+                 </mat-form-field>    
+            </div>
+            <div class="col-md-6" >
+                <mat-form-field class="w-75">
+                    <mat-label>Поштенски код:</mat-label>
+                    <input  matInput [(ngModel)]="code">
+                 </mat-form-field>    
+            </div>
+            <div class="col-md-6" >
+                <mat-form-field class="w-75">
+                    <mat-label>Адреса:</mat-label>
+                    <input  matInput [(ngModel)]="address">
+                 </mat-form-field>    
+            </div>
+            <div class="col-md-6" >
+                <mat-form-field class="w-75">
+                    <mat-label>Број:</mat-label>
+                    <input matInput [(ngModel)]="number">
+                 </mat-form-field>    
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <mat-radio-group aria-label="Select an option">
+            <div class="col-md-12 cart">
+                <table>
+                    <tr class="payment" >
+                        <td>
+                            <mat-radio-button value="1" [checked]="true" ><i class="bi bi-currency-euro"></i></mat-radio-button>
+                        </td>
+                        <td class="tdd">            
+                            <h5>Плаќање при достава</h5>
+                            <p>Плаќање на курирот при испорака на пратката.</p>
+                        </td>
+                    </tr>
+                    <tr class="payment">
+                        <td>
+                             <mat-radio-button value="2"><i class="bi bi-credit-card"></i></mat-radio-button>
+                        </td>
+                        <td class="tdd">            
+                            <h5>Плаќање со платежна картичка</h5>
+                            <p>Сите плаќања ќе бидат извршени во денари. Плаќањето може да се направи со платежни картички на домашни и странски банки.</p>
+                        </td>
+                    </tr>
+                    <tr class="payment">
+                        <td>
+                             <mat-radio-button value="3"><i class="bi bi-card-list"></i></mat-radio-button>
+                        </td>
+                        <td class="tdd">            
+                            <h5>Плаќање со уплатница</h5>
+                            <p>По прием на нарачката ќе Ви бидат испратени инструкции за плаќање. Вашата нарачка ќе биде доставена по извршената уплата.</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </mat-radio-group>
+        </div>
+    </div>
+    <div class="col-md-3 mt-5">
+        <h3>ВКУПНО ЗА ПЛАЌАЊЕ</h3>
+    </div>
+    <div class="col-md-9 mt-5">
+        <hr />
+    </div>
+    <div class="col-md-12 mt-5">
+        <div class="row" style="float: right; padding-right: 20px;">
+            <div class="col-md-12" style="color: grey;">
+                <table>
+                    <tr>
+                        <td>            
+                            <h5>Вкупно: {{totalPrice}} MKD</h5>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>            
+                            <h5>Трошоци на достава:	{{shipping}} MKD</h5>
+                            <hr />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>            
+                            <h5>Вкупно за плаќање со ДДВ: {{finalPrice}} MKD</h5>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 mt-5" style="text-align: -webkit-center;">
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Со кликнување на полето, се сложувате со Условите за користење и продажба.</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="col-md-12 text-center btnfin">
+        <button class="btn btn-sm" type="button" style="font-size: 23px;"(click)="makeOrder()">ПОТВРДИ</button>
+    </div>
+</div>

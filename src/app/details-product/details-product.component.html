@@ -1,0 +1,90 @@
+<div class="row justify-content-center" style="font-family: monospace;">
+    <div class="col-md-7" style="text-align: -webkit-center;">
+        <div class="container">
+          <img id="img" src="{{img}}" style="width: 65%;" >
+        </div>
+        <div class="logo">
+            <h5 class="spodeli">Сподели:</h5>
+            <div class="example-button-container">
+                <button mat-mini-fab class="icon" aria-label="Example icon button with a menu icon">
+                    <i class="bi bi-facebook" matTooltip="Facebook"></i> 
+                  </button>
+                  <button mat-mini-fab class="icon" aria-label="Example icon button with a menu icon">
+                      <i class="bi bi-twitter"matTooltip="Twitter"></i>
+                  </button>
+                  <button mat-mini-fab class="icon"  aria-label="Example icon button with a menu icon">
+                    <i class="bi bi-whatsapp" matTooltip="WhatsApp"></i>
+                  </button>
+                  <button mat-mini-fab class="icon" aria-label="Example icon button with a menu icon">
+                    <i class="bi bi-telephone"matTooltip="Viber"></i>
+                  </button>
+                  <button mat-mini-fab class="icon" aria-label="Example icon button with a menu icon">
+                    <i class="bi bi-envelope"matTooltip="Mail"></i>
+                  </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="color: grey;">
+            <div class="header">
+                <h3>{{name}}</h3>
+                  <p>{{smallDescription}}</p>
+                  <p>Шифра на артикал:{{code}}</p>        
+            </div>
+
+            <div class="detalis">
+              {{description}}
+            </div>
+
+            <div class="price">
+                <h2>{{price}} MKD</h2>
+            </div>
+
+            <div class="size">
+                <h6>Избери големинa:</h6>
+                   <div class="example-button">
+                     <button mat-stroked-button>1</button>
+                     <button mat-stroked-button class="btn2">2</button>
+                     <button mat-stroked-button>3</button>
+                  </div>
+            </div>
+
+            <div class="row justify-content-center" style="padding: 14px;">
+                <div class="col-md-3">
+                    <h6>Количина:</h6>
+                  <input type="number" value="1" (change)="onKey($event)">
+                </div>
+                <div class="col-md-9">
+                  <button class="btn btn-sm kosnicka" type="button" matTooltip="Додади во кошничка" (click)="addToCart()"> Додади во кошничка</button>
+                </div>
+            </div>
+
+            <div>
+               <p> <mat-icon style="padding-top: 3px;"> directions_car</mat-icon> Бесплатна достава над 5500 мкд.</p>
+            </div>
+      </div>
+ </div>
+
+    <div class="row justify-content-center" style=" padding: 42px; padding-left: 58px; padding-right: 10px; ">
+      <div class="row">
+        <div class="col-md-12 similar">СЛИЧНИ ПРОИЗВОДИ</div>
+      </div>
+        <div class="col-md-3" style="text-align: -webkit-center;" *ngFor="let item of listRecommended; let i = index">
+          <mat-card class="example-card2" *ngIf="i < 4">
+            <mat-card-header>
+               <mat-card-title-group> 
+                <div class="container">
+                  <img mat-card-sm-image class="image-overlay" src="{{item.img}}" alt="" />
+                  <div class="overlay"></div>
+                  <div class="button"><a (click)="goToDetails(item.id)">Детално</a></div>
+                </div>
+               </mat-card-title-group> 
+            </mat-card-header>
+            <mat-card-content class="content">  <mat-icon class="heart" id={{item.id}} matTooltip="Додади во листата на омилени производи" (click)="addToFavorites(item)">favorite_border</mat-icon>
+             <p>{{item.productsInfos[0].name}}</p>
+             <p id="p">{{item.price}} MKD.</p> 
+            </mat-card-content>
+          </mat-card>
+         </div>
+    </div>
+
+    

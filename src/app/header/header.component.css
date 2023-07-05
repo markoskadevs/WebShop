@@ -1,0 +1,44 @@
+.logo{
+    text-align: center;
+    cursor: pointer;
+}
+.header{
+    border-bottom: 1px solid rgb(201, 198, 198);
+    padding: 10px;
+
+}
+h5{
+    font-size: 238%;
+    color: #F48999;
+    font-style: italic;
+    font-family: -webkit-body;
+
+}
+.col-3{
+    font-family: monospace;
+}
+
+.col-3 ul {
+    list-style-type: none;
+    place-content: center;
+    display: flex;
+}
+
+.col-3 ul li {
+    padding-right: 7%;
+}
+
+.col-3 ul li a {
+    text-decoration: none;
+    color: rgb(124, 120, 120);
+    font-weight: 500;
+}
+
+.example-margin {
+    margin: 0 10px;
+}
+
+
+
+
+

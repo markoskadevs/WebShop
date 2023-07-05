@@ -1,0 +1,217 @@
+
+.one{
+    background-color: #F48999;
+    border-radius: 5px;
+
+}
+
+.cardheader{
+    background-color: #F6F6F6;
+   
+}
+.matcard1{
+    border-top: 1px solid #F48999;
+    text-align: -webkit-center;
+}
+h6{
+  font-size: 111%;
+}
+
+.tittle{
+    padding: 13px;
+    font-family: monospace;
+    font-weight: 600;
+    align-self: center;
+    
+}
+.example-card{
+    border: 1px solid rgb(190, 188, 188);
+    width: 83%;
+}
+p:hover{
+    color: #F48999;
+    cursor:pointer;
+}
+.tittle2{
+    font-size: 39px;
+    font-family: monospace;
+    padding: 16px;
+    color:#F48999;
+    margin-top: 16px;
+}
+
+.tittle3:hover{
+    cursor:pointer;
+}
+.recommend ul {
+    list-style-type: none;
+    display: flex;
+    place-content: center;
+    font-size: 22px;
+    font-family: monospace;
+
+}
+.recommend ul li a {
+    text-decoration: none;
+    color: black;
+}
+.recommend  ul li {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.btn{
+    color:rgb(255, 255, 255);
+    background-color: #F48999;
+    font-family: monospace;
+    width: 106%;
+}
+
+input {
+    max-width: 100%;
+    border: 1px solid rgb(185, 182, 182);
+}
+p{
+    font-family:monospace; 
+}
+
+mat-card-header{
+     padding: 0 !important;
+}
+#p{
+    font-weight: 900;
+    font-size: 22px;
+}
+.heart{
+    float: right;
+}
+.heart:hover{
+    cursor:pointer;
+}
+.example-card2:hover{
+    box-shadow: 0 4px 8px 0 rgba(121, 118, 118, 0.6), 0 6px 20px 0 rgba(148, 147, 147, 0.35);
+}
+.example-card2{
+    border: 1px solid rgb(190, 188, 188);
+    width: 90%;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-width: 100% !important;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+    max-width: 100% !important;
+  
+  }
+  
+  .container:hover .overlay {
+    display: block;
+    background: rgba(185, 183, 183, 0.3);
+  }
+  
+  .image-overlay {
+    width: 100% !important;
+    height: auto !important;
+    left: 0;
+    max-width: 100% !important;
+    
+  }
+  
+  .container:hover .title {
+    top: 90px;
+  }
+  
+  .button {
+    position: absolute;
+    width: 500px;
+    left:0;
+    top: 110px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+    max-width: 100% !important;
+    transition: top .5s ease;
+    cursor:pointer;
+  }
+  
+  .button a {
+    width: 200px;
+    padding: 12px 48px;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    background-color: #F48999;
+    font-family: monospace;
+    text-decoration: none;
+    cursor:pointer;
+  }
+  
+  .container:hover .button {
+    opacity: 1;
+    
+  }
+  .content{
+    margin-top: 15px;
+  }
+  .img1{
+    width: 100%;
+  }
+  .img1:hover{
+    cursor:pointer;
+  }
+  .img1:hover {
+    opacity: 0.5;
+    transition: opacity .50s ease;
+  }
+
+  .imgdown{
+    margin-top: 25px;
+    width: 100%;
+  }
+  .imgdown:hover{
+    cursor:pointer;
+  }
+  .imgdown:hover {
+    opacity: 0.5;
+    transition: opacity .50s ease;
+  }
+
+  .hover:hover{
+    color: #F48999;
+  }
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  
+  .example-card {
+    margin-bottom: 10px;
+  }
+
+  .indicators { 
+    height: 30% !important;
+    margin-top: 8% !important;
+  }
